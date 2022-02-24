@@ -7,7 +7,7 @@ Stampare di nuovo il paragrafo e la sua lunghezza, dopo aver sostituito con tre 
 -->
 
 <?php
-$text='Creare un sito con un paragrafo di testo a vostra scelta.'
+$text='Creare un sito con un paragrafo di testo a vostra scelta.';
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +19,7 @@ $text='Creare un sito con un paragrafo di testo a vostra scelta.'
     <title>Document</title>
 </head>
 <body>
-    
+    <p>Stringa: <?php echo $text?></p>
+    <div>La lunghezza è: <?php echo strlen($text)?></div> 
 </body>
 </html>
