@@ -5,10 +5,13 @@ Stampare a schermo il paragrafo e la sua lunghezza.
 Una parola da censurare viene passata dall'utente tramite parametro GET.
 Stampare di nuovo il paragrafo e la sua lunghezza, dopo aver sostituito con tre asterischi (***) tutte le occorrenze della parola da censurare. 
 -->
+<?php 
+$text=$_GET['text'] ?? '';;
+$pass=$_GET['pass'] ?? '';
 
-<?php
-$text='Creare un sito con un paragrafo di testo a vostra scelta.';
+$cens=str_replace($pass,'***',$text);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +22,16 @@ $text='Creare un sito con un paragrafo di testo a vostra scelta.';
     <title>Document</title>
 </head>
 <body>
+    
+    <form action="index.php" method="GET">
+        <input type="text" placeholder="Scrivi una frase" name="text">
+        <input type="text" name="pass">
+        <button type="submit">INVIA</button>
+    </form>
     <p>Stringa: <?php echo $text?></p>
     <div>La lunghezza è: <?php echo strlen($text)?></div> 
+    <div><?php echo $cens?></div>
+    <div><?php echo strlen($cens)?></div>
+    
 </body>
 </html>
